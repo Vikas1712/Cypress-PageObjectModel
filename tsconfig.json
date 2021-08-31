@@ -7,5 +7,5 @@
     },
     "include": [
       "**/*.ts"
-, "cypress/support/commands.js"    ]
+, "cypress/support/commands.ts"    ]
   }

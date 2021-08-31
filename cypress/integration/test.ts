@@ -13,7 +13,7 @@ describe('Automation Testing Online tests', () => {
     const contact = new ContactPage()
 
     beforeEach(()=>{
-        cy.openHomePage()
+        cy.visit('https://automationintesting.online/#/')  
         navigation.clickAdminPanel()
         login.executeLogin(testData.VALID_USERNAME,testData.VALID_PASSWORD)
         cy.wait(3000);
@@ -29,7 +29,7 @@ describe('Automation Testing Online tests', () => {
     //Test two: Check to see if rooms are saved and displayed in the UI
     it('should be able to save rooms', () => {
         room.executeCreateRoom(testData.ROOMNO,testData.ROOMPRICE)
-        room.validateRoomDetails(1)
+room.validateRoomDetails(1)
     })
 
     // Test three: Check to see the confirm message appears when branding is updated
@@ -53,6 +53,7 @@ describe('Automation Testing Online tests', () => {
     it('should see unread messages are bolded', () => {
         navigation.navigateToMessage();
         cy.wait(2000);
-        cy.get('div.read-false').its('length').should('be.at.least', 1);
+        cy.get('div.read-false').its('length')
+        .should('be.at.least', 1);
     })
 })
